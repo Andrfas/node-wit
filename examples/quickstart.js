@@ -45,6 +45,7 @@ const actions = {
   },
   getForecast({context, entities}) {
     return new Promise(function(resolve, reject) {
+      console.log(context, entities);
       var location = firstEntityValue(entities, 'location')
       if (location) {
         context.forecast = 'sunny in ' + location; // we should call a weather API here
